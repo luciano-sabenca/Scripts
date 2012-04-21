@@ -1,10 +1,10 @@
 #!/bin/bash
 
 
-# Script para efetuar teste automaticos, comparando as respostas do sussy com as do seu programa
+# Script para efetuar teste automaticos, comparando as respostas do Susy com as do seu programa
 # Author: Luciano Padua Sabenca CC 012
 echo
-echo '===== Script para efetuar testes automaticamente, baixando-os do Sussy ====='
+echo '===== Script para efetuar testes automaticamente, baixando-os do Susy ====='
 echo 'Digite a Materia e a(s) turma(s)(exemplo: mc102wy):'
 read link;
 echo 'Digite o numero do lab:'

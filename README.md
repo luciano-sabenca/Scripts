@@ -1,6 +1,6 @@
 Scripts
 =======
 
-Just Scripts :)
+Just Some Scripts :)
 
-21/04/2012 - Added first script. Just a automatic test for Sussy's UNICAMP system.
+21/04/2012 - Added first script. Just an automatic test for projects using Susy's UNICAMP system.
