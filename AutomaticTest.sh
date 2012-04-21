@@ -1,11 +1,11 @@
-]#!/bin/bash
+#!/bin/bash
 
 
 # Script para efetuar teste automaticos, comparando as respostas do sussy com as do seu programa
 # Author: Luciano Padua Sabenca CC 012
 echo
 echo '===== Script para efetuar testes automaticamente, baixando-os do Sussy ====='
-echo 'Digite a Materia e a(s) turma(s)(exemplo: MC102wy):'
+echo 'Digite a Materia e a(s) turma(s)(exemplo: mc102wy):'
 read link;
 echo 'Digite o numero do lab:'
 read nlab;
@@ -16,6 +16,12 @@ read qtd;
 echo 'Digite o nome do programa compilado:'
 read nomePrograma;
 echo 'Começando a baixar os teste e as saidas esperadas!'
+
+if [ ! -d "Lab_$nlab" ] ;then
+   mkdir "Lab_$nlab"
+   cp $nomePrograma $nlab/
+   cd "Lab_$nlab"
+fi
 
 sleep 5
 
@@ -38,13 +44,13 @@ echo
 sleep 5
 
 for ((a=0; a <= $qtd ; a++)); 
-do 
+do
+  echo "==== Executando Teste $a ====" 
   sleep 1
   ./$nomePrograma < $nomePrograma'_teste_'$a > $nomePrograma'_saida_'$a
   diff -s $nomePrograma'_saida_'$a $nomePrograma'_saida_prevista_'$a
-echo 'Script executado!'
 done;
-
+echo 'Script executado!'
 
 
 
