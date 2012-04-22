@@ -2,6 +2,10 @@
 
 
 # Script para efetuar teste automaticos, comparando as respostas do Susy com as do seu programa
+# Esse script baixa as entradas e saidas do susy e executa-as no programa ja compilado, comparando a saida do seu programa com a saida esperada.
+
+
+
 # Author: Luciano Padua Sabenca CC 012
 echo
 echo '===== Script para efetuar testes automaticamente, baixando-os do Susy ====='
@@ -15,15 +19,15 @@ echo 'Digite a quantidade de testes abertos que há para baixar:'
 read qtd;
 echo 'Digite o nome do programa compilado:'
 read nomePrograma;
-echo 'Começando a baixar os teste e as saidas esperadas!'
-
 if [ ! -d "Lab_$nlab" ] ;then
    mkdir "Lab_$nlab"
-   cp $nomePrograma $nlab/
-   cd "Lab_$nlab"
 fi
 
-sleep 5
+cp $nomePrograma "Lab_$nlab"
+cd "Lab_$nlab"
+echo 'Começando a baixar os teste e as saidas esperadas!'
+sleep 3
+
 
 for ((a=00; a <= $qtd ; a++)); 
 do 
@@ -41,7 +45,7 @@ echo 'Saidas e respostas baixadas!'
 
 echo 'Executando e comparando as saidas!'
 echo 
-sleep 5
+sleep 3
 
 for ((a=0; a <= $qtd ; a++)); 
 do
@@ -50,7 +54,7 @@ do
   ./$nomePrograma < $nomePrograma'_teste_'$a > $nomePrograma'_saida_'$a
   diff -s $nomePrograma'_saida_'$a $nomePrograma'_saida_prevista_'$a
 done;
+
+echo
 echo 'Script executado!'
-
-
 
