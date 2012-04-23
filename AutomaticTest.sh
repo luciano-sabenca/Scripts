@@ -41,7 +41,7 @@ cd dados  # entra na pasta dados
 
 echo
 echo '[i/o] downloading...'
-for i in `seq -w 0 $count`;                #para i de 00 ateh 19
+for i in `seq -w 0 $count`;                #para i de 00 ateh count
 do
     # so iremos baixar se ja nao tivermos baixado
     if [ ! -f 'arq'$i'.in' ] ;then
@@ -63,7 +63,7 @@ cd dados # entra no diretórios dos dados
 echo
 echo '[diff]'
 echo
-for i in `seq -w 0 $count`;               # variável i assume os valores 00,01 ,.., count
+for i in `seq -w 0 $count`;               # variável i assume os valores 00, ..., count
      do        
     ../$program < arq$i.in > arq$i.out;   # executa o programa que está um nível abaixo
                                           # com a entrada arq%i.in e grava a saída no
@@ -73,7 +73,7 @@ for i in `seq -w 0 $count`;               # variável i assume os valores 00,01 
     diff -s arq$i.out arq$i.res;  # compara o arquivo de saída com a resposta esperada
     echo '[ /'$i' ]'
     echo
-done                                 # fim do for
+done
 
 echo '[TESTER] completed'
 echo 'copyleft Luciano P. Sabenca & Fernando H. S. Goncalves'
