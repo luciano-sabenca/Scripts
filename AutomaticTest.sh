@@ -29,7 +29,7 @@ echo 'nome do programa: '
 read program;
 
 
-cd "lab$lab"
+cd lab$lab
 if [ ! -d "dados" ] ;then
     mkdir dados # se a pasta dados nao existe, vamos cria-la
 fi
