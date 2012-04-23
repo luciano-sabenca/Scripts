@@ -65,12 +65,12 @@ echo '[diff]'
 echo
 for i in `seq -w 0 $count`;               # variável i assume os valores 00,01 ,.., count
      do        
-    ../redgreen < arq$i.in > arq$i.out;   # executa o programa que está um nível abaixo
+    ../$program < arq$i.in > arq$i.out;   # executa o programa que está um nível abaixo
                                           # com a entrada arq%i.in e grava a saída no
                                           # arquivo arq$i.out
  
     echo '[ '$i' ]'
-    diff arq$i.out arq$i.res;  # compara o arquivo de saída com a resposta esperada
+    diff -s arq$i.out arq$i.res;  # compara o arquivo de saída com a resposta esperada
     echo '[ /'$i' ]'
     echo
 done                                 # fim do for
