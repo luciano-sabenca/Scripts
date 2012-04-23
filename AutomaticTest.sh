@@ -77,4 +77,3 @@ done                                 # fim do for
 
 echo '[TESTER] completed'
 echo 'copyleft Luciano P. Sabenca & Fernando H. S. Goncalves'
-# copyleft Luciano P. Sabenca & Fernando H. S. Goncalves
