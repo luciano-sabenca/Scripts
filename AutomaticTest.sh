@@ -41,7 +41,7 @@ cd dados  # entra na pasta dados
 
 echo
 echo '[i/o] downloading...'
-for ((i=00; i <= $count ; i++));
+for ((i=00; i <= $count ; i++))
 do
     # so iremos baixar se ja nao tivermos baixado
     if [ ! -f 'arq'$i'.in' ] ;then
@@ -63,7 +63,7 @@ cd dados # entra no diretórios dos dados
 echo
 echo '[diff]'
 echo
-for ((i=00; i <= $count ; i++));
+for ((i=00; i <= $count ; i++))
      do        
     ../$program < arq$i.in > arq$i.out;   # executa o programa que está um nível abaixo
                                           # com a entrada arq%i.in e grava a saída no
